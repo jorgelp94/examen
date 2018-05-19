@@ -18,7 +18,14 @@ class LoginViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var branches = [Branch]()
-    var annotations = [BranchAnnotation]()
+    
+    @objc func touchTapped(_ sender: UITapGestureRecognizer) {
+        if let mapNavigationController = storyboard?.instantiateViewController(withIdentifier: "MapViewNavigationController") as? UINavigationController, let mapViewController = mapNavigationController.viewControllers.first as? MapViewController {
+            mapViewController.branches = self.branches
+            self.present(mapNavigationController, animated: true, completion: nil)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,7 @@ class LoginViewController: UIViewController {
         map.delegate = self
         requestLocationAccess()
         downloadBranches()
+        addGestureRecognizerToMap()
     }
     
     func requestLocationAccess() {
@@ -42,6 +50,11 @@ class LoginViewController: UIViewController {
         default:
             locationManager.requestWhenInUseAuthorization()
         }
+    }
+    
+    func addGestureRecognizerToMap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.touchTapped(_:)))
+        map.addGestureRecognizer(tap)
     }
     
     func zoomIntoLocation() {

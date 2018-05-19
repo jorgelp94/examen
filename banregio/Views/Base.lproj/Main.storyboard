@@ -19,7 +19,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="banregio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="banregio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,21 +167,28 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="mLi-KD-Sje">
             <objects>
-                <viewController id="a9p-dj-aYl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="a9p-dj-aYl" customClass="MapViewController" customModule="banregio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RUu-fh-X3b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-zr-0uX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5CK-MJ-lzK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5CK-MJ-lzK" firstAttribute="leading" secondItem="7Og-eK-cju" secondAttribute="leading" id="4wB-B4-tQ3"/>
+                            <constraint firstItem="5CK-MJ-lzK" firstAttribute="trailing" secondItem="7Og-eK-cju" secondAttribute="trailing" id="DKc-E0-60u"/>
                             <constraint firstItem="7Og-eK-cju" firstAttribute="trailing" secondItem="cdc-zr-0uX" secondAttribute="trailing" id="Dhq-8E-fMh"/>
+                            <constraint firstItem="5CK-MJ-lzK" firstAttribute="top" secondItem="7Og-eK-cju" secondAttribute="top" id="OEx-dZ-wxR"/>
                             <constraint firstItem="7Og-eK-cju" firstAttribute="bottom" secondItem="cdc-zr-0uX" secondAttribute="bottom" id="i5H-eJ-syb"/>
                             <constraint firstItem="cdc-zr-0uX" firstAttribute="leading" secondItem="7Og-eK-cju" secondAttribute="leading" id="i9C-Lu-Nsd"/>
                             <constraint firstItem="cdc-zr-0uX" firstAttribute="top" secondItem="7Og-eK-cju" secondAttribute="top" id="rc3-s7-t1T"/>
@@ -189,6 +196,10 @@
                         <viewLayoutGuide key="safeArea" id="7Og-eK-cju"/>
                     </view>
                     <navigationItem key="navigationItem" id="cxY-AL-Dbb"/>
+                    <connections>
+                        <outlet property="map" destination="cdc-zr-0uX" id="qmT-Hr-ufn"/>
+                        <outlet property="searchBar" destination="5CK-MJ-lzK" id="qcj-2v-PMI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZM-Om-h9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,9 +208,9 @@
         <!--Navigation Controller-->
         <scene sceneID="cH2-qe-d19">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2mr-KH-y2V" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="2mr-KH-y2V" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VwE-RX-3q0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="VwE-RX-3q0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
