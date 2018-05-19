@@ -10,6 +10,7 @@
 		701779D320B0866400925CB4 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 701779D220B084BF00925CB4 /* CircularStd-Bold.otf */; };
 		701779D420B0866700925CB4 /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 701779D120B084BF00925CB4 /* CircularStd-Book.otf */; };
 		701779D620B09D4C00925CB4 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701779D520B09D4C00925CB4 /* Branch.swift */; };
+		701779D820B0B91900925CB4 /* BranchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701779D720B0B91900925CB4 /* BranchAnnotation.swift */; };
 		7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7DD20AD119400D8E430 /* AppDelegate.swift */; };
 		7099F7E320AD119400D8E430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7099F7E120AD119400D8E430 /* Main.storyboard */; };
 		7099F7E520AD119800D8E430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7099F7E420AD119800D8E430 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		701779D120B084BF00925CB4 /* CircularStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.otf"; sourceTree = "<group>"; };
 		701779D220B084BF00925CB4 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
 		701779D520B09D4C00925CB4 /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		701779D720B0B91900925CB4 /* BranchAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchAnnotation.swift; sourceTree = "<group>"; };
 		7099F7DA20AD119400D8E430 /* banregio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banregio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7099F7DD20AD119400D8E430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7099F7E220AD119400D8E430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				7099F7F120AD334400D8E430 /* User.swift */,
 				701779D520B09D4C00925CB4 /* Branch.swift */,
+				701779D720B0B91900925CB4 /* BranchAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				7099F7F020AD331700D8E430 /* LoginViewController.swift in Sources */,
 				7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */,
+				701779D820B0B91900925CB4 /* BranchAnnotation.swift in Sources */,
 				701779D620B09D4C00925CB4 /* Branch.swift in Sources */,
 				7099F7F220AD334400D8E430 /* User.swift in Sources */,
 				7099F7F820AD346200D8E430 /* Constants.swift in Sources */,

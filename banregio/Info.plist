@@ -49,5 +49,7 @@
 		<string>CircularStd-Bold.otf</string>
 		<string>CircularStd-Book.otf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necesitamos tu ubicación para mostrarte los cajeros y sucursales cercanas a ti.</string>
 </dict>
 </plist>

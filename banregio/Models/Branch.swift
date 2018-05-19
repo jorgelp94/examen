@@ -5,10 +5,10 @@
 //  Created by Jorge Luis Perales on 5/19/18.
 //  Copyright © 2018 Jorge Perales. All rights reserved.
 //
-
 import MapKit
 
 class Branch: NSObject, Decodable {
+    
     let id: String
     let type: String
     let name: String
@@ -26,6 +26,8 @@ class Branch: NSObject, Decodable {
     let branchPriorityCity: String
     let lat: String
     let long: String
+    var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
+    
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -46,6 +48,7 @@ class Branch: NSObject, Decodable {
         self.branchPriorityState = try container.decode(String.self, forKey: .branchPriorityState)
         self.lat = try container.decode(String.self, forKey: .lat)
         self.long = try container.decode(String.self, forKey: .long)
+        self.location = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
     }
     
     private enum CodingKeys: String, CodingKey {
