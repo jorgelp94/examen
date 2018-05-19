@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701779D320B0866400925CB4 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 701779D220B084BF00925CB4 /* CircularStd-Bold.otf */; };
+		701779D420B0866700925CB4 /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 701779D120B084BF00925CB4 /* CircularStd-Book.otf */; };
+		701779D620B09D4C00925CB4 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701779D520B09D4C00925CB4 /* Branch.swift */; };
 		7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7DD20AD119400D8E430 /* AppDelegate.swift */; };
 		7099F7E320AD119400D8E430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7099F7E120AD119400D8E430 /* Main.storyboard */; };
 		7099F7E520AD119800D8E430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7099F7E420AD119800D8E430 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		64A02C25C66F60BF7A426B10 /* Pods-banregio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-banregio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-banregio/Pods-banregio.debug.xcconfig"; sourceTree = "<group>"; };
+		701779D120B084BF00925CB4 /* CircularStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.otf"; sourceTree = "<group>"; };
+		701779D220B084BF00925CB4 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
+		701779D520B09D4C00925CB4 /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		7099F7DA20AD119400D8E430 /* banregio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banregio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7099F7DD20AD119400D8E430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7099F7E220AD119400D8E430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +58,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		701779D020B0847E00925CB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				701779D220B084BF00925CB4 /* CircularStd-Bold.otf */,
+				701779D120B084BF00925CB4 /* CircularStd-Book.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7099F7D120AD119400D8E430 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +95,7 @@
 				7099F7E420AD119800D8E430 /* Assets.xcassets */,
 				7099F7E620AD119800D8E430 /* LaunchScreen.storyboard */,
 				7099F7E920AD119800D8E430 /* Info.plist */,
+				701779D020B0847E00925CB4 /* Resources */,
 				7099F7F620AD344D00D8E430 /* Helpers */,
 			);
 			path = banregio;
@@ -89,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				7099F7F120AD334400D8E430 /* User.swift */,
+				701779D520B09D4C00925CB4 /* Branch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +203,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701779D420B0866700925CB4 /* CircularStd-Book.otf in Resources */,
 				7099F7E820AD119800D8E430 /* LaunchScreen.storyboard in Resources */,
+				701779D320B0866400925CB4 /* CircularStd-Bold.otf in Resources */,
 				7099F7E520AD119800D8E430 /* Assets.xcassets in Resources */,
 				7099F7E320AD119400D8E430 /* Main.storyboard in Resources */,
 			);
@@ -240,6 +259,7 @@
 			files = (
 				7099F7F020AD331700D8E430 /* LoginViewController.swift in Sources */,
 				7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */,
+				701779D620B09D4C00925CB4 /* Branch.swift in Sources */,
 				7099F7F220AD334400D8E430 /* User.swift in Sources */,
 				7099F7F820AD346200D8E430 /* Constants.swift in Sources */,
 			);

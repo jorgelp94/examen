@@ -44,5 +44,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CircularStd-Bold.otf</string>
+		<string>CircularStd-Book.otf</string>
+	</array>
 </dict>
 </plist>
