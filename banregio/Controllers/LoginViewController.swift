@@ -82,13 +82,18 @@ class LoginViewController: UIViewController {
                 print("JSON: \(json)") // serialized json response
                 if let user = json["user"] as? String, let pass = json["password"] as? String {
                     if user == username && pass == password {
-                        print("Continue")
+                        self.presentViewController(storyboardId: "RegisterNavigationViewController")
                     } else {
                         self.displayAlert(title: "Error", message: "Usuario y/o contraseña incorrectos. Intenta de nuevo.")
                     }
                 }
             }
         }
+    }
+    
+    func presentViewController(storyboardId: String) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: storyboardId)
+        self.present(controller!, animated: true, completion: nil)
     }
     
     func displayAlert(title: String, message: String) {

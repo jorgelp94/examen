@@ -7,4 +7,8 @@ target 'banregio' do
 
   # Pods for banregio
   pod 'Alamofire', '~> 4.7'
+  pod 'Hero', '~> 1.2'
+  pod 'lottie-ios'
+  pod 'Onboard'
+  pod 'IQKeyboardManagerSwift'
 end

@@ -11,11 +11,11 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var map: MKMapView!
     
     let locationManager = CLLocationManager()
     var branches = [Branch]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,12 @@ class MapViewController: UIViewController {
         map.delegate = self
         requestLocationAccess()
         loadMapAnnotations()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Búsqueda"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     func requestLocationAccess() {
@@ -57,6 +63,9 @@ class MapViewController: UIViewController {
         }
     }
 
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -76,5 +85,13 @@ extension MapViewController: MKMapViewDelegate {
             view.markerTintColor = annotation.markerTintColor
         }
         return view
+    }
+}
+
+extension MapViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
+        print("asdasdasd")
     }
 }
