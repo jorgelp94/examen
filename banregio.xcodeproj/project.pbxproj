@@ -19,6 +19,7 @@
 		7099F7E820AD119800D8E430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7099F7E620AD119800D8E430 /* LaunchScreen.storyboard */; };
 		7099F7F020AD331700D8E430 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7EF20AD331700D8E430 /* LoginViewController.swift */; };
 		7099F7F820AD346200D8E430 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7F720AD346200D8E430 /* Constants.swift */; };
+		70ADE0B120B3BBF60039EC79 /* BanregioData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0AF20B3BBF60039EC79 /* BanregioData.xcdatamodeld */; };
 		84CCC819CFC1AF7662C3744E /* Pods_banregio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31CE0F15137536181425263 /* Pods_banregio.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		7099F7E920AD119800D8E430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7099F7EF20AD331700D8E430 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7099F7F720AD346200D8E430 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		70ADE0B020B3BBF60039EC79 /* BanregioData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BanregioData.xcdatamodel; sourceTree = "<group>"; };
 		91A0DEC882804EC857E830FC /* Pods-banregio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-banregio.release.xcconfig"; path = "Pods/Target Support Files/Pods-banregio/Pods-banregio.release.xcconfig"; sourceTree = "<group>"; };
 		A31CE0F15137536181425263 /* Pods_banregio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_banregio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 			children = (
 				701779D520B09D4C00925CB4 /* Branch.swift */,
 				701779D720B0B91900925CB4 /* BranchAnnotation.swift */,
+				70ADE0AF20B3BBF60039EC79 /* BanregioData.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */,
 				7033FAA820B258BB00677AD0 /* RegisterViewController.swift in Sources */,
 				701779D820B0B91900925CB4 /* BranchAnnotation.swift in Sources */,
+				70ADE0B120B3BBF60039EC79 /* BanregioData.xcdatamodeld in Sources */,
 				701779D620B09D4C00925CB4 /* Branch.swift in Sources */,
 				7099F7F820AD346200D8E430 /* Constants.swift in Sources */,
 				701779DA20B0DA1700925CB4 /* MapViewController.swift in Sources */,
@@ -477,6 +481,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70ADE0AF20B3BBF60039EC79 /* BanregioData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70ADE0B020B3BBF60039EC79 /* BanregioData.xcdatamodel */,
+			);
+			currentVersion = 70ADE0B020B3BBF60039EC79 /* BanregioData.xcdatamodel */;
+			path = BanregioData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7099F7D220AD119400D8E430 /* Project object */;
 }

@@ -120,9 +120,6 @@
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s46-5b-EsP">
                                 <rect key="frame" x="0.0" y="373" width="375" height="294"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="mapId"/>
-                                </userDefinedRuntimeAttributes>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sucursales y Cajeros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-u7-3P8">
                                 <rect key="frame" x="107" y="336" width="160" height="21"/>
@@ -185,13 +182,15 @@
                                 <rect key="frame" x="112.5" y="89" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="CaP-0y-ciY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="G6C-3o-pgO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="HgE-3f-H7u"/>
                                     <constraint firstAttribute="width" constant="150" id="ZcY-kH-OFJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="75"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Css-NK-uj1">
@@ -317,9 +316,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-zr-0uX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="mapId"/>
-                                </userDefinedRuntimeAttributes>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

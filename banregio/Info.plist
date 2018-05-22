@@ -51,5 +51,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesitamos tu ubicación para mostrarte los cajeros y sucursales cercanas a ti.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Necesitamos tu permiso para que puedas seleccionar una foto.</string>
 </dict>
 </plist>
