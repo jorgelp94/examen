@@ -20,6 +20,14 @@
 		7099F7F020AD331700D8E430 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7EF20AD331700D8E430 /* LoginViewController.swift */; };
 		7099F7F820AD346200D8E430 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099F7F720AD346200D8E430 /* Constants.swift */; };
 		70ADE0B120B3BBF60039EC79 /* BanregioData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0AF20B3BBF60039EC79 /* BanregioData.xcdatamodeld */; };
+		70ADE0B320B3D4B40039EC79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0B220B3D4B40039EC79 /* HomeViewController.swift */; };
+		70ADE0B520B3D5E40039EC79 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0B420B3D5E40039EC79 /* LeftMenuViewController.swift */; };
+		70ADE0B720B3D96C0039EC79 /* MenuBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0B620B3D96C0039EC79 /* MenuBaseTableViewCell.swift */; };
+		70ADE0BA20B3DA170039EC79 /* SectionOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0B920B3DA170039EC79 /* SectionOneViewController.swift */; };
+		70ADE0BC20B3DA250039EC79 /* SectionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0BB20B3DA250039EC79 /* SectionTwoViewController.swift */; };
+		70ADE0BE20B3DA340039EC79 /* SectionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADE0BD20B3DA340039EC79 /* SectionThreeViewController.swift */; };
+		70ADE0C220B3E26E0039EC79 /* profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 70ADE0C120B3E26E0039EC79 /* profile.json */; };
+		70ADE0C420B3E5610039EC79 /* atm_.json in Resources */ = {isa = PBXBuildFile; fileRef = 70ADE0C320B3E5610039EC79 /* atm_.json */; };
 		84CCC819CFC1AF7662C3744E /* Pods_banregio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31CE0F15137536181425263 /* Pods_banregio.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +48,14 @@
 		7099F7EF20AD331700D8E430 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7099F7F720AD346200D8E430 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		70ADE0B020B3BBF60039EC79 /* BanregioData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BanregioData.xcdatamodel; sourceTree = "<group>"; };
+		70ADE0B220B3D4B40039EC79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70ADE0B420B3D5E40039EC79 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		70ADE0B620B3D96C0039EC79 /* MenuBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBaseTableViewCell.swift; sourceTree = "<group>"; };
+		70ADE0B920B3DA170039EC79 /* SectionOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOneViewController.swift; sourceTree = "<group>"; };
+		70ADE0BB20B3DA250039EC79 /* SectionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTwoViewController.swift; sourceTree = "<group>"; };
+		70ADE0BD20B3DA340039EC79 /* SectionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionThreeViewController.swift; sourceTree = "<group>"; };
+		70ADE0C120B3E26E0039EC79 /* profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile.json; sourceTree = "<group>"; };
+		70ADE0C320B3E5610039EC79 /* atm_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = atm_.json; sourceTree = "<group>"; };
 		91A0DEC882804EC857E830FC /* Pods-banregio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-banregio.release.xcconfig"; path = "Pods/Target Support Files/Pods-banregio/Pods-banregio.release.xcconfig"; sourceTree = "<group>"; };
 		A31CE0F15137536181425263 /* Pods_banregio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_banregio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,6 +85,8 @@
 			children = (
 				701779D220B084BF00925CB4 /* CircularStd-Bold.otf */,
 				701779D120B084BF00925CB4 /* CircularStd-Book.otf */,
+				70ADE0C320B3E5610039EC79 /* atm_.json */,
+				70ADE0C120B3E26E0039EC79 /* profile.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,6 +141,9 @@
 				7099F7EF20AD331700D8E430 /* LoginViewController.swift */,
 				701779D920B0DA1700925CB4 /* MapViewController.swift */,
 				7033FAA720B258BB00677AD0 /* RegisterViewController.swift */,
+				70ADE0B220B3D4B40039EC79 /* HomeViewController.swift */,
+				70ADE0B420B3D5E40039EC79 /* LeftMenuViewController.swift */,
+				70ADE0B820B3D9FD0039EC79 /* Menu */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7099F7E120AD119400D8E430 /* Main.storyboard */,
+				70ADE0B620B3D96C0039EC79 /* MenuBaseTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +163,16 @@
 				7099F7F720AD346200D8E430 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		70ADE0B820B3D9FD0039EC79 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				70ADE0B920B3DA170039EC79 /* SectionOneViewController.swift */,
+				70ADE0BB20B3DA250039EC79 /* SectionTwoViewController.swift */,
+				70ADE0BD20B3DA340039EC79 /* SectionThreeViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		E6D4709C95B4247D3AB860D0 /* Pods */ = {
@@ -212,9 +244,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70ADE0C420B3E5610039EC79 /* atm_.json in Resources */,
 				701779D420B0866700925CB4 /* CircularStd-Book.otf in Resources */,
 				7099F7E820AD119800D8E430 /* LaunchScreen.storyboard in Resources */,
 				701779D320B0866400925CB4 /* CircularStd-Bold.otf in Resources */,
+				70ADE0C220B3E26E0039EC79 /* profile.json in Resources */,
 				7099F7E520AD119800D8E430 /* Assets.xcassets in Resources */,
 				7099F7E320AD119400D8E430 /* Main.storyboard in Resources */,
 			);
@@ -249,17 +283,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-banregio/Pods-banregio-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Onboard/Onboard.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Onboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,10 +312,16 @@
 				7099F7DE20AD119400D8E430 /* AppDelegate.swift in Sources */,
 				7033FAA820B258BB00677AD0 /* RegisterViewController.swift in Sources */,
 				701779D820B0B91900925CB4 /* BranchAnnotation.swift in Sources */,
+				70ADE0B520B3D5E40039EC79 /* LeftMenuViewController.swift in Sources */,
 				70ADE0B120B3BBF60039EC79 /* BanregioData.xcdatamodeld in Sources */,
+				70ADE0BC20B3DA250039EC79 /* SectionTwoViewController.swift in Sources */,
+				70ADE0B320B3D4B40039EC79 /* HomeViewController.swift in Sources */,
+				70ADE0B720B3D96C0039EC79 /* MenuBaseTableViewCell.swift in Sources */,
 				701779D620B09D4C00925CB4 /* Branch.swift in Sources */,
 				7099F7F820AD346200D8E430 /* Constants.swift in Sources */,
 				701779DA20B0DA1700925CB4 /* MapViewController.swift in Sources */,
+				70ADE0BE20B3DA340039EC79 /* SectionThreeViewController.swift in Sources */,
+				70ADE0BA20B3DA170039EC79 /* SectionOneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

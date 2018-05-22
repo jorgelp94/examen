@@ -7,7 +7,7 @@ target 'banregio' do
 
   # Pods for banregio
   pod 'Alamofire', '~> 4.7'
-  pod 'Hero', '~> 1.2'
+  pod 'SlideMenuControllerSwift'
   pod 'lottie-ios'
   pod 'Onboard'
   pod 'IQKeyboardManagerSwift'

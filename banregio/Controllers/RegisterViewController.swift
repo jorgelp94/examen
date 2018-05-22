@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SlideMenuControllerSwift
 
 class RegisterViewController: UIViewController {
 
@@ -75,9 +76,18 @@ class RegisterViewController: UIViewController {
         do {
             try managedContext.save()
             self.displayAlert(title: "Éxito'", message: "La información de tu perfil se guardó exitosamente.")
+            self.presentMainMenu()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+    
+    func presentMainMenu() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationViewController")
+        let leftViewController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuViewController")
+        let slideMenuController = SlideMenuController(mainViewController: homeViewController!, leftMenuViewController: leftViewController!)
+        UIApplication.shared.keyWindow?.rootViewController = slideMenuController
+         UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
     
     @objc func datePickerValueChanged(datePicker: UIDatePicker) {

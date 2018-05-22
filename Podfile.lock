@@ -1,32 +1,32 @@
 PODS:
   - Alamofire (4.7.2)
-  - Hero (1.2.0)
   - IQKeyboardManagerSwift (6.0.3)
   - lottie-ios (2.5.0)
   - Onboard (2.3.3)
+  - SlideMenuControllerSwift (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - Hero (~> 1.2)
   - IQKeyboardManagerSwift
   - lottie-ios
   - Onboard
+  - SlideMenuControllerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Hero
     - IQKeyboardManagerSwift
     - lottie-ios
     - Onboard
+    - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Onboard: 4d6e943e20bdd6bc229df967a347dd7514bc2a6f
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
 
-PODFILE CHECKSUM: 667bf8f76c026046e1f91bed11c0d06a36a68e01
+PODFILE CHECKSUM: 61e330a3e24dfaafe1929195be00d33a85852d00
 
 COCOAPODS: 1.5.2

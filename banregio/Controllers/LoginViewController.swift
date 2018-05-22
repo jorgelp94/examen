@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import Alamofire
-import Hero
 
 class LoginViewController: UIViewController {
 
@@ -32,7 +31,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         map.showsUserLocation = true
         map.delegate = self
-        map.hero.id = "mapTransition"
         requestLocationAccess()
         downloadBranches()
         addGestureRecognizerToMap()

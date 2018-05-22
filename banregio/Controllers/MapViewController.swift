@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import Hero
 
 class MapViewController: UIViewController {
     
@@ -25,7 +24,6 @@ class MapViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white, NSAttributedStringKey.font: UIFont(name: "CircularStd-Book", size: 20)!]
         map.showsUserLocation = true
         map.delegate = self
-        map.hero.id = "mapTransition"
         requestLocationAccess()
         loadMapAnnotations()
         
@@ -66,7 +64,7 @@ class MapViewController: UIViewController {
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        hero.dismissViewController()
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
