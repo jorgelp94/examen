@@ -73,7 +73,7 @@ class MapViewController: UIViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         self.resultBranches = branches.filter {
-            $0.city.contains(searchText)
+            $0.name.contains(searchText.uppercased())
         }
         for result in self.resultBranches {
             print(result.city)
@@ -152,7 +152,7 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             branch = branches[indexPath.row]
         }
-        var annotations = self.map.annotations
+        let annotations = self.map.annotations
         print(annotations.self)
         var newAnnotations = [BranchAnnotation]()
         for annotation in annotations {

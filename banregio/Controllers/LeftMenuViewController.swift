@@ -58,7 +58,6 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         self.tableView.registerCellClass(MenuBaseTableViewCell.self)
         
         self.profileImage.image = (InternalHelper.sharedInstance.currentUser.imageData != nil) ? UIImage(data: InternalHelper.sharedInstance.currentUser.imageData!) : UIImage(named: "placeholder-profile")
-        print(InternalHelper.sharedInstance.currentUser.imageData!)
         
         self.profileImage.layer.cornerRadius = self.profileImage.bounds.width/2
         self.profileImage.clipsToBounds = true
