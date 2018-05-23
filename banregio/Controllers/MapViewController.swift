@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
         loadMapAnnotations()
         
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Búsqueda"
         navigationItem.searchController = searchController
         definesPresentationContext = true
@@ -143,5 +143,29 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = branch.name
         cell.addressLabel.text = branch.address
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let branch: Branch
+        if isFiltering() {
+            branch = resultBranches[indexPath.row]
+        } else {
+            branch = branches[indexPath.row]
+        }
+        var annotations = self.map.annotations
+        print(annotations.self)
+        var newAnnotations = [BranchAnnotation]()
+        for annotation in annotations {
+            if annotation .isMember(of: BranchAnnotation.self) {
+                newAnnotations.append(annotation as! BranchAnnotation)
+            }
+        }
+        
+        let filtered = newAnnotations.filter {
+            $0.branch.id == branch.id
+        }
+        self.tableView.isHidden = true
+        self.map.selectAnnotation(filtered[0], animated: true)
+        self.map.setCenter(filtered[0].coordinate, animated: true)
     }
 }
