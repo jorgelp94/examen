@@ -8,15 +8,23 @@
 
 import UIKit
 import Lottie
+import SlideMenuControllerSwift
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var animationView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavBarStyle()
+        showAnimation()
         
+        self.welcomeLabel.text = "Bienvenido a tu Home \(InternalHelper.sharedInstance.currentUser.name)"
+    }
+    
+    func showAnimation() {
         let animation = LOTAnimationView(name: "atm_")
         animationView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         animation.contentMode = .scaleAspectFill
@@ -29,9 +37,12 @@ class HomeViewController: UIViewController {
     }
 
     func setupNavBarStyle() {
-        self.navigationController?.navigationBar.barTintColor = ColorPalette.orange
         self.navigationItem.title = "Home"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white, NSAttributedStringKey.font: UIFont(name: "CircularStd-Book", size: 20)!]
+    }
+    
+    @IBAction func openMenuButtonPressed(_ sender: UIButton) {
+        self.slideMenuController()?.openLeft()
     }
     
 }

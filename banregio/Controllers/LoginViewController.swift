@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import Alamofire
+import CoreData
+import SlideMenuControllerSwift
 
 class LoginViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class LoginViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var branches = [Branch]()
+    var users: [NSManagedObject] = []
     
     @objc func touchTapped(_ sender: UITapGestureRecognizer) {
         if let mapNavigationController = storyboard?.instantiateViewController(withIdentifier: "MapViewNavigationController") as? UINavigationController, let mapViewController = mapNavigationController.viewControllers.first as? MapViewController {
@@ -69,6 +72,7 @@ class LoginViewController: UIViewController {
             do {
                 let results = try jsonDecoder.decode(Array<Branch>.self, from:response.data!)
                 self.branches = results
+                InternalHelper.sharedInstance.branches = results
                 self.loadMapAnnotations()
             } catch {
                 print("caught: \(error)")
@@ -82,13 +86,29 @@ class LoginViewController: UIViewController {
                 print("JSON: \(json)") // serialized json response
                 if let user = json["user"] as? String, let pass = json["password"] as? String {
                     if user == username && pass == password {
-                        self.presentViewController(storyboardId: "RegisterNavigationViewController")
+                        self.presentNewViewController()
                     } else {
                         self.displayAlert(title: "Error", message: "Usuario y/o contraseña incorrectos. Intenta de nuevo.")
                     }
                 }
             }
         }
+    }
+    
+    func presentNewViewController() {
+        if self.checkForPreviousSession() {
+            presentMainMenu()
+        } else {
+            self.presentViewController(storyboardId: "RegisterNavigationViewController")
+        }
+    }
+    
+    func presentMainMenu() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationViewController")
+        let leftViewController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuViewController")
+        let slideMenuController = SlideMenuController(mainViewController: homeViewController!, leftMenuViewController: leftViewController!)
+        UIApplication.shared.keyWindow?.rootViewController = slideMenuController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
     
     func presentViewController(storyboardId: String) {
@@ -107,6 +127,27 @@ class LoginViewController: UIViewController {
         for branch in self.branches {
             let bAnnotation = BranchAnnotation(branch: branch)
             map.addAnnotation(bAnnotation)
+        }
+    }
+    
+    func checkForPreviousSession() -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let frequest = NSFetchRequest<NSManagedObject>(entityName: "User")
+        do {
+            users = try managedContext.fetch(frequest)
+            if users.count > 0 {
+                for user in users {
+                    if let name = user.value(forKey: "name") as? String, let lastname = user.value(forKey: "lastName") as? String, let address = user.value(forKey: "address") as? String, let dob = user.value(forKey: "birthDate") as? Date, let imageData = user.value(forKey: "imageData") as? Data {
+                        InternalHelper.sharedInstance.currentUser = CurrentUser(name: name, lastName: lastname, address: address, dob: dob, imageData: imageData)
+                    }
+                }
+               return true
+            }
+            return false
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return false
         }
     }
     

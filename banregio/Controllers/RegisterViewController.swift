@@ -31,7 +31,6 @@ class RegisterViewController: UIViewController {
     }
     
     func setupNavBarStyle() {
-        self.navigationController?.navigationBar.barTintColor = ColorPalette.orange
         self.navigationItem.title = "Alta de Usuario"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white, NSAttributedStringKey.font: UIFont(name: "CircularStd-Book", size: 20)!]
     }
@@ -75,7 +74,7 @@ class RegisterViewController: UIViewController {
         
         do {
             try managedContext.save()
-            self.displayAlert(title: "Éxito'", message: "La información de tu perfil se guardó exitosamente.")
+            self.displayAlert(title: "Éxito", message: "La información de tu perfil se guardó exitosamente.")
             self.presentMainMenu()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
@@ -87,7 +86,7 @@ class RegisterViewController: UIViewController {
         let leftViewController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuViewController")
         let slideMenuController = SlideMenuController(mainViewController: homeViewController!, leftMenuViewController: leftViewController!)
         UIApplication.shared.keyWindow?.rootViewController = slideMenuController
-         UIApplication.shared.keyWindow?.makeKeyAndVisible()
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
     
     @objc func datePickerValueChanged(datePicker: UIDatePicker) {
@@ -102,6 +101,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func saveFormButtonPressed(_ sender: UIButton) {
+        self.addressTextField.resignFirstResponder()
         if nameTextField.text != "" && lastnameTextField.text != "" && birthDateTextField.text != "" && addressTextField.text != "" {
             let date = dateFormatter.date(from: birthDateTextField.text!)
             let image: Data = UIImageJPEGRepresentation(self.profileImageView.image!, 0.7)!

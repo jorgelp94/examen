@@ -39,6 +39,10 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         super.viewDidLoad()
         
         self.tableView.separatorColor = UIColor.clear
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         let mainVC = storyboard!.instantiateViewController(withIdentifier: "HomeViewController")
         self.homeViewController = UINavigationController(rootViewController: mainVC)
         
@@ -52,6 +56,9 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         self.sectionThreeViewController = UINavigationController(rootViewController: sectionThreeViewController)
         
         self.tableView.registerCellClass(MenuBaseTableViewCell.self)
+        
+        self.profileImage.image = (InternalHelper.sharedInstance.currentUser.imageData != nil) ? UIImage(data: InternalHelper.sharedInstance.currentUser.imageData!) : UIImage(named: "placeholder-profile")
+        print(InternalHelper.sharedInstance.currentUser.imageData!)
         
         self.profileImage.layer.cornerRadius = self.profileImage.bounds.width/2
         self.profileImage.clipsToBounds = true
@@ -102,9 +109,6 @@ extension LeftMenuViewController: UITableViewDataSource {
             case .home, .section1, .section2, .section3, .logout:
                 let cell = MenuBaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: MenuBaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
-                if menu == .home {
-                    cell.imageView?.image = UIImage(named: "profile")
-                }
                 return cell
             }
         }

@@ -12,14 +12,15 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
     
     let locationManager = CLLocationManager()
     var branches = [Branch]()
+    var resultBranches = [Branch]()
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = ColorPalette.orange
         self.navigationItem.title = "Sucursales y Cajeros"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white, NSAttributedStringKey.font: UIFont(name: "CircularStd-Book", size: 20)!]
         map.showsUserLocation = true
@@ -32,6 +33,9 @@ class MapViewController: UIViewController {
         searchController.searchBar.placeholder = "Búsqueda"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     func requestLocationAccess() {
@@ -62,6 +66,26 @@ class MapViewController: UIViewController {
             map.addAnnotation(bAnnotation)
         }
     }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        self.resultBranches = branches.filter {
+            $0.city.contains(searchText)
+        }
+        for result in self.resultBranches {
+            print(result.city)
+            print(result.id)
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -91,7 +115,33 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-        print("asdasdasd")
+        if searchController.isActive {
+            self.tableView.isHidden = false
+        } else {
+            self.tableView.isHidden = true
+        }
+        self.filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
+extension MapViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return resultBranches.count
+        }
+        return branches.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SearchResultsTableViewCell
+        let branch: Branch
+        if isFiltering() {
+            branch = resultBranches[indexPath.row]
+        } else {
+            branch = branches[indexPath.row]
+        }
+        cell.titleLabel.text = branch.name
+        cell.addressLabel.text = branch.address
+        return cell
     }
 }
